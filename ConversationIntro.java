@@ -9,7 +9,7 @@ public class ConversationIntro {
   
   /** Returns an integer one larger than its input */
   public int plusOne(int n) {
-    // n = n+1;
+    n = n + 1;
     return n;
   }
 
@@ -21,7 +21,8 @@ public class ConversationIntro {
   
   /** Returns an integer that is double its input */
   public int timesTwo(int n) {
-    return 0;
+    n = n*2;
+    return n;
   }
 
   /*
@@ -30,7 +31,8 @@ public class ConversationIntro {
   
   /** Returns the square of its input */
   public int squared(int n) {
-    return 0;
+    n = n*n;
+    return n;
   }
 
   /*
@@ -38,8 +40,9 @@ public class ConversationIntro {
    */
   
   /** Divides its input by seven, dropping remainders */
-  public int intDivideBy7(int n) {
-    return 0;
+  public int intDivideBy7(int n) {   // java 中 / 是整除
+    n = n/7;
+    return n;
   }
 
   /*
@@ -47,8 +50,9 @@ public class ConversationIntro {
    */
   
   /** Divides its input by 7 */
-  public double doubleDivideBy7(int n) {
-    return 0;
+  public double doubleDivideBy7(double n) {
+    n = n / 7;
+    return n;
   }
 
   /*
@@ -63,11 +67,11 @@ public class ConversationIntro {
   /** Returns true if its input is prime */
   public static boolean isPrime(int n) {
     boolean isPrime = (n > 1); // one, zero, and negatives not prime
-    /*for (int i = 2; i <= Math.sqrt(n); i++) {
+    for (int i = 2; i <= Math.sqrt(n); i++) {
         if (n%i == 0) {
             isPrime = false;
         }
-    }*/
+    }
     return isPrime;
   }
 
@@ -77,6 +81,9 @@ public class ConversationIntro {
   
   /** Returns true if its input is even */
   public boolean isEven(int n) {
+    if (n%2 == 0){
+      return true;
+    }
     return false;
   }
 
@@ -92,8 +99,8 @@ public class ConversationIntro {
   
   /** Returns true if its input is a comma */
   public static boolean isComma(String s) {
-    //return s.equals(",");
-    return (s == ",");
+    return s.equals(",");
+    // return (s == ",");
   }
 
   /*
@@ -102,6 +109,9 @@ public class ConversationIntro {
   
   /** Returns true if its input is one of:  .,?! */
   public boolean isPunctuation(String s) {
+    if ((s.contains(".")) || (s.contains("!")) || (s.contains(",")) || (s.contains("?")) || (s.contains("*"))){
+      return true;
+    }
     return false;
   }
 
@@ -111,6 +121,12 @@ public class ConversationIntro {
   
   /** Returns its input, unless it is "I" or "you", which switch */
   public String mirrorWord(String s) {
+    if (s.contains("you")){
+      s = s.replace("you", "I");
+    }
+    else if (s.contains("I")) {
+      s = s.replace("I", "you");
+    }
     return s;
   }
 
@@ -125,9 +141,9 @@ public class ConversationIntro {
   /** Returns an array of whole numbers up to n */
   public static int[] wholeNumbers(int n) {
     int[] arr = new int[n]; // allocate space for the array
-    //for (int i = 0; i < n; i++) {
-    //  arr[i] = i+1;
-    //}
+    for (int i = 0; i < n; i++) {
+      arr[i] = i+1;
+    }
     return arr;
   }
 
@@ -139,6 +155,9 @@ public class ConversationIntro {
   /** Returns an array of squares from 1 to n*n */
   public static int[] squares(int n) {
     int[] arr = new int[n]; // allocate space for the array
+    for (int i = 0; i < n; i++){
+      arr[i] = (i + 1) * (i + 1);
+    }
     return arr;
   }
 }
